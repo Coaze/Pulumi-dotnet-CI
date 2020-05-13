@@ -2,7 +2,8 @@ FROM pulumi/pulumi:v2.1.1
 
 USER root
 # install tool for packaging lambda functions
-RUN dotnet tool install -g Amazon.Lambda.Tools
+RUN dotnet tool install --tool-path /root/.dotnet Amazon.Lambda.Tools
+ENV PATH="/root/.dotnet:${PATH}"
 #install zip
 RUN apt-get update \
     && apt-get install -y zip \
