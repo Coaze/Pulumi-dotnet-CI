@@ -17,5 +17,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: Coaze/Pulumi-dotnet-CI/Pulumi-dotnet-CI
+          repository: coaze/pulumi-dotnet-ci/pulumi-dotnet-ci
           tag_with_ref: true
