@@ -14,8 +14,8 @@ jobs:
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v1
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
           registry: docker.pkg.github.com
-          repository: coaze/pulumi-dotnet-ci/pulumi-dotnet-ci
+          repository: coaze/pulumi-dotnet-ci
           tag_with_ref: true
