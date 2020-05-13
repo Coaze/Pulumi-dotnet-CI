@@ -9,6 +9,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Pulumi plugins
-RUN pulumi plugin install resource aws 2.2.0
+RUN pulumi plugin install resource aws 2.4.0
 
 RUN pulumi plugin ls
