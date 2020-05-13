@@ -11,5 +11,6 @@ RUN apt-get update \
 
 # Install Pulumi plugins
 RUN pulumi plugin install resource aws 2.4.0
+RUN pulumi plugin install resource azure 3.3.0
 
 RUN pulumi plugin ls
