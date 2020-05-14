@@ -1,7 +1,10 @@
 # This workflow will deploy the updated cloud environment to the staging environment
 name: Build the image
 
-on: [push]
+on: 
+  push:
+    branches-ignore:
+      - 'master'
 
 jobs:
   build:
