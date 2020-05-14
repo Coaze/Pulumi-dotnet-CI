@@ -1,20 +1,17 @@
 # This workflow will deploy the updated cloud environment to the staging environment
-name: Build and publish image
+name: Build the image
 
-on:
-  release:
-    types: [published]
+on: 
+  push:
+    branches-ignore:
+      - 'master'
+
 jobs:
-  push_to_registry:
-    name: Push Docker image to Docker Hub
+  build:
+    name: Build docker image
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: Push to Docker Hub
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USER }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: coaze/pulumi-dotnet-ci
-          tag_with_ref: true
+      - name: Build image
+        run: docker build -t coaze/pulumi-dotnet-ci:vbeta .
