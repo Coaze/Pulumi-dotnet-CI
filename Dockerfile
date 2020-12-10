@@ -1,4 +1,4 @@
-FROM pulumi/pulumi:v2.14.0
+FROM pulumi/pulumi:v2.15.4
 
 USER root
 # install tool for packaging lambda functions
