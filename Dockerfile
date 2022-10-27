@@ -1,4 +1,4 @@
-FROM pulumi/pulumi:v2.15.4
+FROM pulumi/pulumi:v3.44.2
 
 USER root
 # install tool for packaging lambda functions
@@ -8,9 +8,3 @@ ENV PATH="/root/.dotnet:${PATH}"
 RUN apt-get update \
     && apt-get install -y zip \
     && rm -rf /var/lib/apt/lists/*
-
-# Install Pulumi plugins
-RUN pulumi plugin install resource aws 3.19.3
-RUN pulumi plugin install resource azure 3.33.2
-
-RUN pulumi plugin ls
